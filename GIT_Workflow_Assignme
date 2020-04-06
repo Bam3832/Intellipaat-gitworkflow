@@ -1,0 +1,406 @@
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project
+$ git clone https://github.com/Bam3832/Intellipaat-gitworkflow.git
+Cloning into 'Intellipaat-gitworkflow'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project
+$ ls
+ Intellipaat-gitworkflow/  'Merge conflict code frm Gitbash'   merge-conflict/
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project
+$ cd ^C
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project
+$ cd Intellipaat-gitworkflow
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (master)
+$ vim main.c
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (master)
+$ git add .
+warning: LF will be replaced by CRLF in main.c.
+The file will have its original line endings in your working directory
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (master)
+$ git commit -m" Add main .c file "
+[master 896cbe0]  Add main .c file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 main.c
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (master)
+$ ls
+main.c  README.md
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (master)
+$ git branch Release
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (Feature1)
+$ git add .
+warning: LF will be replaced by CRLF in main.c.
+The file will have its original line endings in your working directory
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (Feature1)
+$ git commit -m " Updated Feature 1 code"
+[Feature1 f4da4bd]  Updated Feature 1 code
+ 1 file changed, 5 insertions(+)
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (Feature1)
+$ git branch
+  Develop
+* Feature1
+  Feature2
+  Release
+  master
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (Feature1)
+$ git checkout Feature2
+Switched to branch 'Feature2'
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (Feature2)
+$ ls
+main.c  README.md
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (Feature2)
+$ vim main.c
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (Feature2)
+$ git add .
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (Feature2)
+$ git commit -m "updated Feature 2 code"
+[Feature2 347009c] updated Feature 2 code
+ 1 file changed, 5 insertions(+)
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (Feature2)
+$ git checkout Develop
+Switched to branch 'Develop'
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (Develop)
+$ git merge Feature1
+Updating 896cbe0..f4da4bd
+Fast-forward
+ main.c | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (Develop)
+$ git merge Feature2
+Auto-merging main.c
+CONFLICT (content): Merge conflict in main.c
+Automatic merge failed; fix conflicts and then commit the result.
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (Develop|MERGING)
+$ git mergetool
+
+This message is displayed because 'merge.tool' is not configured.
+See 'git mergetool --tool-help' or 'git help config' for more details.
+'git mergetool' will now attempt to use one of the following tools:
+opendiff kdiff3 tkdiff xxdiff meld tortoisemerge gvimdiff diffuse diffmerge ecmerge p4merge araxis bc codecompare smerge emerge vimdiff
+Merging:
+main.c
+
+
+Normal merge conflict for 'main.c':
+  {local}: modified file
+  {remote}: modified file
+Hit return to start merge resolution tool (vimdiff): 4 files to edit
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (Develop|MERGING)
+$ git add .
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (Develop|MERGING)
+$ git commit -m " Merged Feature 1 and Feature 2 Code"
+[Develop cee24f7]  Merged Feature 1 and Feature 2 Code
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (Develop)
+$ cat main.c
+"Hello Intellipaat"
+
+
+Feature1()
+{
+        //Sample Feature 1 code()
+
+Feature2()
+{
+        //Sample code for Feature 2
+
+}
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (Develop)
+$ git checkout Release
+Switched to branch 'Release'
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (Release)
+$ git merge Develop
+Updating 896cbe0..cee24f7
+Fast-forward
+ main.c      | 11 +++++++++++
+ main.c.orig | 12 ++++++++++++
+ 2 files changed, 23 insertions(+)
+ create mode 100644 main.c.orig
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (Release)
+$ cat main.c
+"Hello Intellipaat"
+
+
+Feature1()
+{
+        //Sample Feature 1 code()
+
+Feature2()
+{
+        //Sample code for Feature 2
+
+}
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (Release)
+$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (master)
+$ git merge Release
+Updating 896cbe0..cee24f7
+Fast-forward
+ main.c      | 11 +++++++++++
+ main.c.orig | 12 ++++++++++++
+ 2 files changed, 23 insertions(+)
+ create mode 100644 main.c.orig
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (master)
+$ cat main.c
+"Hello Intellipaat"
+
+
+Feature1()
+{
+        //Sample Feature 1 code()
+
+Feature2()
+{
+        //Sample code for Feature 2
+
+}
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (master)
+$ ^C
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (master)
+$ git push origin --all
+Enumerating objects: 14, done.
+Counting objects: 100% (14/14), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (12/12), done.
+Writing objects: 100% (13/13), 1.26 KiB | 258.00 KiB/s, done.
+Total 13 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), done.
+To https://github.com/Bam3832/Intellipaat-gitworkflow.git
+   7b13231..cee24f7  master -> master
+ * [new branch]      Develop -> Develop
+ * [new branch]      Feature1 -> Feature1
+ * [new branch]      Feature2 -> Feature2
+ * [new branch]      Release -> Release
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (master)
+$ ^C
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (master)
+$
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project
+$ git clone https://github.com/Bam3832/Intellipaat-gitworkflow.git
+Cloning into 'Intellipaat-gitworkflow'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project
+$ ls
+ Intellipaat-gitworkflow/  'Merge conflict code frm Gitbash'   merge-conflict/
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project
+$ cd ^C
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project
+$ cd Intellipaat-gitworkflow
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (master)
+$ vim main.c
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (master)
+$ git add .
+warning: LF will be replaced by CRLF in main.c.
+The file will have its original line endings in your working directory
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (master)
+$ git commit -m" Add main .c file "
+[master 896cbe0]  Add main .c file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 main.c
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (master)
+$ ls
+main.c  README.md
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (master)
+$ git branch Release
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (Feature1)
+$ git add .
+warning: LF will be replaced by CRLF in main.c.
+The file will have its original line endings in your working directory
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (Feature1)
+$ git commit -m " Updated Feature 1 code"
+[Feature1 f4da4bd]  Updated Feature 1 code
+ 1 file changed, 5 insertions(+)
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (Feature1)
+$ git branch
+  Develop
+* Feature1
+  Feature2
+  Release
+  master
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (Feature1)
+$ git checkout Feature2
+Switched to branch 'Feature2'
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (Feature2)
+$ ls
+main.c  README.md
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (Feature2)
+$ vim main.c
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (Feature2)
+$ git add .
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (Feature2)
+$ git commit -m "updated Feature 2 code"
+[Feature2 347009c] updated Feature 2 code
+ 1 file changed, 5 insertions(+)
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (Feature2)
+$ git checkout Develop
+Switched to branch 'Develop'
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (Develop)
+$ git merge Feature1
+Updating 896cbe0..f4da4bd
+Fast-forward
+ main.c | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (Develop)
+$ git merge Feature2
+Auto-merging main.c
+CONFLICT (content): Merge conflict in main.c
+Automatic merge failed; fix conflicts and then commit the result.
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (Develop|MERGING)
+$ git mergetool
+
+This message is displayed because 'merge.tool' is not configured.
+See 'git mergetool --tool-help' or 'git help config' for more details.
+'git mergetool' will now attempt to use one of the following tools:
+opendiff kdiff3 tkdiff xxdiff meld tortoisemerge gvimdiff diffuse diffmerge ecmerge p4merge araxis bc codecompare smerge emerge vimdiff
+Merging:
+main.c
+
+
+Normal merge conflict for 'main.c':
+  {local}: modified file
+  {remote}: modified file
+Hit return to start merge resolution tool (vimdiff): 4 files to edit
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (Develop|MERGING)
+$ git add .
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (Develop|MERGING)
+$ git commit -m " Merged Feature 1 and Feature 2 Code"
+[Develop cee24f7]  Merged Feature 1 and Feature 2 Code
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (Develop)
+$ cat main.c
+"Hello Intellipaat"
+
+
+Feature1()
+{
+        //Sample Feature 1 code()
+
+Feature2()
+{
+        //Sample code for Feature 2
+
+}
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (Develop)
+$ git checkout Release
+Switched to branch 'Release'
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (Release)
+$ git merge Develop
+Updating 896cbe0..cee24f7
+Fast-forward
+ main.c      | 11 +++++++++++
+ main.c.orig | 12 ++++++++++++
+ 2 files changed, 23 insertions(+)
+ create mode 100644 main.c.orig
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (Release)
+$ cat main.c
+"Hello Intellipaat"
+
+
+Feature1()
+{
+        //Sample Feature 1 code()
+
+Feature2()
+{
+        //Sample code for Feature 2
+
+}
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (Release)
+$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (master)
+$ git merge Release
+Updating 896cbe0..cee24f7
+Fast-forward
+ main.c      | 11 +++++++++++
+ main.c.orig | 12 ++++++++++++
+ 2 files changed, 23 insertions(+)
+ create mode 100644 main.c.orig
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (master)
+$ cat main.c
+"Hello Intellipaat"
+
+
+Feature1()
+{
+        //Sample Feature 1 code()
+
+Feature2()
+{
+        //Sample code for Feature 2
+
+}
+
+Banu@DESKTOP-CD3C9FS MINGW64 ~/Documents/Banu/DevOps - Training/Assignments/GIT/My project/Intellipaat-gitworkflow (master)
+$
